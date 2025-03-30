@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Metadados para garantir que o conteúdo seja exibido corretamente -->
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres para UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna a página responsiva -->
+    <title>Tarô</title> <!-- Título da página exibido na aba do navegador -->
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS externo -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/9954/9954141.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Seção de navegação com o título "Bem Vindo" -->
+    <div id="nav">
+        <h1>Bem Vindo</h1> <!-- Título de boas-vindas -->
+    </div>
+
+    <center>
+        <!-- Seção principal onde o conteúdo vai ser exibido -->
+        <div id="main">
+            <!-- Instrução para o usuário digitar o número da carta -->
+            <p id="p1">Se deseja uma carta em específico, digite abaixo:</p>
+
+            <center>
+                <!-- Campo para o usuário digitar o número da carta -->
+                <input type="number" id="carta">
+                <!-- Botão que confirma a escolha da carta -->
+                <button onclick="carta()">confirmar</button>
+            </center>
+
+            <!-- Div que irá mostrar a imagem da carta -->
+            <div id="divImagem">
+                <!-- Imagem da carta que será exibida após a escolha -->
+                <img src="#" id="imagem" onclick="escala()"> <!-- Função escala é chamada ao clicar na imagem -->
+            </div>
+
+            <!-- Resultado da carta escolhida -->
+            <h1 id="resultado"></h1>
+
+            <hr> <!-- Linha de separação -->
+
+            <p>quer fazer uma tiragem?</p> <!-- Texto sugerindo que o usuário faça uma tiragem aleatória -->
+
+            <!-- Botão que confirma a tiragem aleatória -->
+            <button onclick="randomCard()">confirmar</button>
+
+            <!-- Div que irá mostrar a imagem da carta sorteada -->
+            <div id="divImagem2">
+                <!-- Imagem da carta sorteada que será exibida -->
+                <img src="#" id="imagem2" onclick="escala2()"> <!-- Função escala2 é chamada ao clicar na imagem -->
+            </div>
+
+            <!-- Resultado da carta sorteada -->
+            <h1 id="resultado2"></h1>
+        </div>
+    </center>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+
+</html>

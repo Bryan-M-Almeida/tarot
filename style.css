@@ -1,0 +1,130 @@
+/* Estilos para o corpo da página */
+body {
+    /* Imagem de fundo que ocupa toda a tela */
+    background-image: url(https://wallpapers.com/images/hd/tarot-card-e3djmle7rphzg6k2.jpg);
+    text-align: center;
+    /* Centraliza o texto */
+    background-repeat: no-repeat;
+    /* Impede a repetição da imagem */
+    background-size: cover;
+    /* Faz a imagem cobrir toda a tela */
+    font-family: 'Courier New', Courier, monospace;
+    /* Define a fonte */
+    font-style: italic;
+    /* Deixa o texto em itálico */
+}
+
+/* Estilos para a imagem da carta */
+#imagem,
+#imagem2 {
+    width: 150px;
+    /* Largura da imagem */
+    height: 250px;
+    /* Altura da imagem */
+    border: 3px solid rgb(0, 0, 0);
+    /* Borda preta ao redor da imagem */
+    cursor: pointer;
+    /* Indica que a imagem é clicável */
+    margin-top: 50px;
+    /* Adiciona margem superior */
+}
+
+/* Oculta elementos com o display: none */
+div {
+    display: none;
+}
+
+/* Estilos para os botões */
+button {
+    cursor: pointer;
+    /* Indica que o botão é clicável */
+    font-size: 20px;
+    /* Define o tamanho da fonte */
+    border: 2px solid black;
+    /* Borda preta */
+    border-radius: 20px;
+    /* Borda arredondada */
+}
+
+/* Efeito de hover nos botões */
+button:hover {
+    background-color: black;
+    /* Muda a cor de fundo quando o mouse passa por cima */
+    color: antiquewhite;
+    /* Muda a cor do texto quando o mouse passa por cima */
+    scale: 1.05;
+    /* Aumenta o tamanho do botão */
+}
+
+/* Estilos para a barra de navegação */
+#nav {
+    background-color: rgb(201, 194, 134);
+    /* Cor de fundo amarela */
+    border: 3px solid rgb(27, 11, 11);
+    /* Borda marrom escuro */
+    display: block;
+    /* Faz o elemento ser exibido */
+    margin-bottom: 90px;
+    /* Adiciona margem inferior */
+    border-radius: 30px;
+    /* Borda arredondada */
+}
+
+/* Estilos para o conteúdo principal */
+#main {
+    display: block;
+    /* Exibe o conteúdo em bloco */
+    justify-items: center;
+    /* Centraliza os itens */
+    border: 1px solid black;
+    /* Borda preta */
+    margin-left: 300px;
+    /* Margem esquerda */
+    margin-right: 300px;
+    /* Margem direita */
+    background-color: rgb(177, 204, 175);
+    /* Cor de fundo verde claro */
+    border-radius: 20px;
+    /* Borda arredondada */
+}
+
+/* Estilos para o campo de entrada de carta */
+#carta {
+    background-color: rgb(230, 231, 177);
+    /* Cor de fundo amarela clara */
+    border-radius: 20px;
+    /* Borda arredondada */
+}
+
+/* Estilos para os parágrafos */
+p {
+    font-size: 25px;
+    /* Tamanho da fonte */
+    background-color: gainsboro;
+    /* Cor de fundo cinza claro */
+    border: 1px solid black;
+    /* Borda preta */
+}
+
+/* Estilos específicos para o parágrafo com id "p1" */
+#p1 {
+    margin-left: 20px;
+    /* Margem esquerda */
+    margin-right: 20px;
+    /* Margem direita */
+}
+
+/* Estilos para o resultado da carta */
+#resultado,
+#resultado2 {
+    background-color: bisque;
+    /* Cor de fundo bege */
+    margin-left: 20px;
+    /* Margem esquerda */
+    margin-right: 20px;
+    /* Margem direita */
+    border-radius: 20px;
+    /* Borda arredondada */
+    border: 2px solid rgb(204, 183, 144);
+    /* Borda de cor amarelada */
+}
