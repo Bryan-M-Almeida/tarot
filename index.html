@@ -2,48 +2,80 @@
 <html lang="pt-br">
 
 <head>
+    <!-- Configurações básicas da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da aba -->
     <title>Tarô</title>
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Ícone da aba -->
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/9954/9954141.png" type="image/x-icon">
 </head>
 
 <body>
+    <!-- Header com tutorial -->
+    <header>
+        <h2>Como usar o site:</h2>
+        <ul>
+            <li>Você pode digitar um número de carta e clicar em "Consultar" para ver o significado.</li>
+            <li>Ou clique em "Confirmar" para receber uma carta aleatória.</li>
+            <li>Clique nas cartas para aplicar um efeito visual.</li>
+        </ul>
+    </header>
+
+    <!-- Cabeçalho de boas-vindas -->
     <div id="nav">
-        <h1>Bem Vindo ao Mundo do Tarô</h1>
+        <h1>Bem-vindo ao Mundo do Tarô</h1>
     </div>
 
+    <!-- Container principal do conteúdo -->
     <div id="main">
+        <!-- Consulta por número da carta -->
         <p>Se deseja uma carta em específico, digite abaixo:</p>
 
-
         <form id="formTarot">
-            <input type="number" id="carta"  placeholder="Número da carta" required/>
+            <input type="number" id="carta" placeholder="Número da carta" required />
             <button type="submit">Consultar</button>
         </form>
 
-
-
+        <!-- Imagem da carta escolhida manualmente -->
         <div id="divImagem">
-            <img src="#" id="imagem" onclick="escala()">
+            <img src="#" id="imagem" onclick="escala()" alt="Carta escolhida">
         </div>
 
+        <!-- Resultado da carta específica -->
         <h1 id="resultado"></h1>
 
         <hr>
 
+        <!-- Tiragem aleatória -->
         <p>Quer fazer uma tiragem aleatória?</p>
-
         <button onclick="randomCard()">Confirmar</button>
 
+        <!-- Imagem da carta aleatória -->
         <div id="divImagem2">
-            <img src="#" id="imagem2" onclick="escala2()">
+            <img src="#" id="imagem2" onclick="escala2()" alt="Carta aleatória">
         </div>
 
+        <!-- Resultado da carta aleatória -->
         <h1 id="resultado2"></h1>
     </div>
 
+    <!-- Rodapé com autoria e GitHub -->
+    <footer>
+        <p>
+            Feito por <a href="https://github.com/Bryan-M-Almeida" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon">
+                Bryan
+            </a> • 2025
+        </p>
+    </footer>
+
+    <!-- Script JavaScript -->
     <script src="script.js"></script>
 </body>
 
