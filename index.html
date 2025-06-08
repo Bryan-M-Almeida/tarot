@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarô</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/9954/9954141.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="nav">
+        <h1>Bem Vindo ao Mundo do Tarô</h1>
+    </div>
+
+    <center>
+        <div id="main">
+            <p id="p1">Se deseja uma carta em específico, digite abaixo:</p>
+
+            <center>
+                <input type="number" id="carta" placeholder="Número da carta">
+                <button onclick="carta()">Confirmar</button>
+            </center>
+
+            <div id="divImagem">
+                <img src="#" id="imagem" onclick="escala()">
+            </div>
+
+            <h1 id="resultado"></h1>
+
+            <hr>
+
+            <p>Quer fazer uma tiragem aleatória?</p>
+
+            <button onclick="randomCard()">Confirmar</button>
+
+            <div id="divImagem2">
+                <img src="#" id="imagem2" onclick="escala2()">
+            </div>
+
+            <h1 id="resultado2"></h1>
+        </div>
+    </center>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

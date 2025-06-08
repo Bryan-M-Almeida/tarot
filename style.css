@@ -1,0 +1,111 @@
+/* Estilos para o corpo da página */
+body {
+    background-image: url('https://example.com/tarot-background.jpg');
+    /* Substitua pelo link da nova imagem */
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Garamond', serif;
+    /* Fonte mais elegante */
+    color: #fff;
+    /* Cor do texto */
+}
+
+/* Estilos para a imagem da carta */
+#imagem,
+#imagem2 {
+    width: 150px;
+    height: 250px;
+    border: 3px solid #ffcc00;
+    /* Borda dourada */
+    cursor: pointer;
+    margin-top: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    /* Sombra para profundidade */
+}
+
+/* Oculta elementos com o display: none */
+div {
+    display: none;
+}
+
+/* Estilos para os botões */
+button {
+    cursor: pointer;
+    font-size: 20px;
+    border: 2px solid #ffcc00;
+    /* Borda dourada */
+    border-radius: 20px;
+    background-color: #6a0dad;
+    /* Roxo */
+    color: white;
+    /* Texto branco */
+}
+
+/* Efeito de hover nos botões */
+button:hover {
+    background-color: #ffcc00;
+    /* Dourado ao passar o mouse */
+    color: black;
+    /* Texto preto ao passar o mouse */
+    transform: scale(1.05);
+    /* Aumenta o tamanho do botão */
+}
+
+/* Estilos para a barra de navegação */
+#nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fundo escuro com transparência */
+    border: 3px solid #ffcc00;
+    /* Borda dourada */
+    display: block;
+    margin-bottom: 90px;
+    border-radius: 30px;
+}
+
+/* Estilos para o conteúdo principal */
+#main {
+    display: block;
+    justify-items: center;
+    border: 1px solid #ffcc00;
+    /* Borda dourada */
+    margin: 0 300px;
+    /* Margens esquerda e direita */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fundo branco com transparência */
+    border-radius: 20px;
+    padding: 20px;
+    /* Adiciona padding */
+}
+
+/* Estilos para o campo de entrada de carta */
+#carta {
+    background-color: rgba(230, 231, 177, 0.8);
+    /* Cor de fundo amarela clara com transparência */
+    border-radius: 20px;
+}
+
+/* Estilos para os parágrafos */
+p {
+    font-size: 25px;
+    background-color: rgba(255, 228, 196, 0.8);
+    /* Cor de fundo clara com transparência */
+    border: 1px solid #ffcc00;
+    /* Borda dourada */
+    padding: 10px;
+    /* Adiciona padding */
+}
+
+/* Estilos para o resultado da carta */
+#resultado,
+#resultado2 {
+    background-color: rgba(255, 228, 196, 0.9);
+    /* Cor de fundo clara com transparência */
+    margin: 20px;
+    /* Margens */
+    border-radius: 20px;
+    border: 2px solid #ffcc00;
+    /* Borda dourada */
+    padding: 10px;
+    /* Adiciona padding */
+}
