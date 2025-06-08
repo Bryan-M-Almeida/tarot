@@ -1,111 +1,91 @@
-/* Estilos para o corpo da página */
 body {
-    background-image: url('https://example.com/tarot-background.jpg');
-    /* Substitua pelo link da nova imagem */
+    background-color: rgb(15, 15, 15);
     text-align: center;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Garamond', serif;
-    /* Fonte mais elegante */
     color: #fff;
-    /* Cor do texto */
+    /* Keep this white for text clarity */
 }
 
-/* Estilos para a imagem da carta */
 #imagem,
 #imagem2 {
     width: 150px;
     height: 250px;
-    border: 3px solid #ffcc00;
-    /* Borda dourada */
+    border: 3px solid #534301;
+    /* Changed to match button border */
     cursor: pointer;
     margin-top: 50px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-    /* Sombra para profundidade */
 }
 
-/* Oculta elementos com o display: none */
 div {
     display: none;
 }
 
-/* Estilos para os botões */
 button {
     cursor: pointer;
     font-size: 20px;
     border: 2px solid #ffcc00;
-    /* Borda dourada */
+    /* Match border color */
     border-radius: 20px;
     background-color: #6a0dad;
-    /* Roxo */
+    /* Keep this dark purple */
     color: white;
-    /* Texto branco */
+    transition: 0.8s;
 }
 
-/* Efeito de hover nos botões */
 button:hover {
     background-color: #ffcc00;
-    /* Dourado ao passar o mouse */
+    /* Highlight color on hover */
     color: black;
-    /* Texto preto ao passar o mouse */
     transform: scale(1.05);
-    /* Aumenta o tamanho do botão */
 }
 
-/* Estilos para a barra de navegação */
 #nav {
     background-color: rgba(0, 0, 0, 0.8);
-    /* Fundo escuro com transparência */
     border: 3px solid #ffcc00;
-    /* Borda dourada */
+    /* Match border color */
     display: block;
     margin-bottom: 90px;
     border-radius: 30px;
 }
 
-/* Estilos para o conteúdo principal */
 #main {
     display: block;
     justify-items: center;
     border: 1px solid #ffcc00;
-    /* Borda dourada */
+    /* Match border color */
     margin: 0 300px;
-    /* Margens esquerda e direita */
-    background-color: rgba(255, 255, 255, 0.9);
-    /* Fundo branco com transparência */
+    background-color: rgba(0, 0, 0, 0.9);
     border-radius: 20px;
     padding: 20px;
-    /* Adiciona padding */
 }
 
-/* Estilos para o campo de entrada de carta */
 #carta {
-    background-color: rgba(230, 231, 177, 0.8);
-    /* Cor de fundo amarela clara com transparência */
+    background-color: rgba(49, 37, 37, 0.8);
     border-radius: 20px;
 }
 
-/* Estilos para os parágrafos */
 p {
     font-size: 25px;
-    background-color: rgba(255, 228, 196, 0.8);
-    /* Cor de fundo clara com transparência */
+    background-color: rgba(59, 37, 10, 0.8);
     border: 1px solid #ffcc00;
-    /* Borda dourada */
+    /* Match border color */
     padding: 10px;
-    /* Adiciona padding */
 }
 
-/* Estilos para o resultado da carta */
+input{
+    border: 1px solid wheat;
+    padding: 3px;
+}
+
 #resultado,
 #resultado2 {
-    background-color: rgba(255, 228, 196, 0.9);
-    /* Cor de fundo clara com transparência */
+    background-color: rgba(48, 31, 11, 0.9);
     margin: 20px;
-    /* Margens */
     border-radius: 20px;
     border: 2px solid #ffcc00;
-    /* Borda dourada */
+    /* Match border color */
     padding: 10px;
-    /* Adiciona padding */
 }

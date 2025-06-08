@@ -14,34 +14,35 @@
         <h1>Bem Vindo ao Mundo do Tarô</h1>
     </div>
 
-    <center>
-        <div id="main">
-            <p id="p1">Se deseja uma carta em específico, digite abaixo:</p>
+    <div id="main">
+        <p>Se deseja uma carta em específico, digite abaixo:</p>
 
-            <center>
-                <input type="number" id="carta" placeholder="Número da carta">
-                <button onclick="carta()">Confirmar</button>
-            </center>
 
-            <div id="divImagem">
-                <img src="#" id="imagem" onclick="escala()">
-            </div>
+        <form id="formTarot">
+            <input type="number" id="carta"  placeholder="Número da carta"/>
+            <button type="submit">Consultar</button>
+        </form>
 
-            <h1 id="resultado"></h1>
 
-            <hr>
 
-            <p>Quer fazer uma tiragem aleatória?</p>
-
-            <button onclick="randomCard()">Confirmar</button>
-
-            <div id="divImagem2">
-                <img src="#" id="imagem2" onclick="escala2()">
-            </div>
-
-            <h1 id="resultado2"></h1>
+        <div id="divImagem">
+            <img src="#" id="imagem" onclick="escala()">
         </div>
-    </center>
+
+        <h1 id="resultado"></h1>
+
+        <hr>
+
+        <p>Quer fazer uma tiragem aleatória?</p>
+
+        <button onclick="randomCard()">Confirmar</button>
+
+        <div id="divImagem2">
+            <img src="#" id="imagem2" onclick="escala2()">
+        </div>
+
+        <h1 id="resultado2"></h1>
+    </div>
 
     <script src="script.js"></script>
 </body>

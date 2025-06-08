@@ -125,3 +125,14 @@ function escala2() {
         imagem.style.transform = `rotate(${inverter}deg) scale(1.5)`; // Aumenta a imagem
     }
 }
+
+
+document.querySelector("#carta").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+});
+
+document.querySelector("#formTarot").addEventListener("submit", function (e) {
+    e.preventDefault();
+    carta(); // chama a função que mostra a carta com base no número digitado
+});
