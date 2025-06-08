@@ -1,4 +1,8 @@
-// Lista com os nomes das cartas do tarot
+// ===================
+// LISTAS DE DADOS DO TAROT
+// ===================
+
+// Nomes das 22 cartas do Tarot
 const nomesCartas = [
     "O Louco", "O Mago", "A Sacerdotisa", "A Imperatriz", "O Imperador",
     "O Hierofante", "Os Enamorados", "O Carro", "A Justiça", "O Eremita",
@@ -6,19 +10,10 @@ const nomesCartas = [
     "O Diabo", "A Torre", "A Estrela", "A Lua", "O Sol", "O Julgamento", "O Mundo"
 ];
 
-// Lista com os caminhos das imagens correspondentes às cartas
-const diretorio = [
-    "cartas/carta 0.jpeg", "cartas/carta 1.jpeg", "cartas/carta 2.jpeg", "cartas/carta 3.jpeg",
-    "cartas/carta 4.jpeg", "cartas/carta 5.jpeg", "cartas/carta 6.jpeg",
-    "cartas/carta 7.jpeg", "cartas/carta 8.jpeg", "cartas/carta 9.jpeg",
-    "cartas/carta 10.jpeg", "cartas/carta 11.jpeg", "cartas/carta 12.jpeg",
-    "cartas/carta 13.jpeg", "cartas/carta 14.jpeg", "cartas/carta 15.jpeg",
-    "cartas/carta 16.jpeg", "cartas/carta 17.jpeg", "cartas/carta 18.jpeg",
-    "cartas/carta 19.jpeg", "cartas/carta 20.jpeg", "cartas/carta 21.jpeg",
-    "cartas/carta 22.jpeg"
-];
+// Caminhos das imagens correspondentes às cartas
+const diretorio = nomesCartas.map((_, i) => `cartas/carta ${i}.jpeg`);
 
-// Lista com descrições para cada carta
+// Descrições normais de cada carta
 const descricoesCartas = [
     "Novo começo, aventura, liberdade, ingenuidade.",
     "Poder, habilidade, manifestação, iniciativa.",
@@ -44,7 +39,7 @@ const descricoesCartas = [
     "Conclusão, realização, plenitude, totalidade."
 ];
 
-// Lista com descrições invertidas para cada carta
+// Descrições invertidas de cada carta
 const descricoesInvertidas = [
     "Insegurança, imprudência, novos começos inacabados, falta de direção.",
     "Manipulação, habilidades mal utilizadas, engano, falta de controle.",
@@ -70,69 +65,82 @@ const descricoesInvertidas = [
     "Fracasso, falta de realização, incompletude, abandono."
 ];
 
-// Função que exibe a carta baseada no número digitado
+// ===================
+// VARIÁVEIS DE CONTROLE
+// ===================
+let inverter = 0; // Controla a rotação/inversão da carta
+
+// ===================
+// FUNÇÕES
+// ===================
+
+/**
+ * Exibe a carta escolhida manualmente pelo número digitado.
+ */
 function carta() {
-    const entrada = parseInt(document.getElementById("carta").value, 10); // Converte o valor para número inteiro
-    if (isNaN(entrada) || entrada > 21 || entrada < 0) { // Verifica se a entrada é válida
+    const entrada = parseInt(document.getElementById("carta").value, 10);
+
+    if (isNaN(entrada) || entrada < 0 || entrada > 21) {
         document.getElementById("resultado").innerHTML = "Essa carta não existe";
         document.getElementById("divImagem").style.display = "none";
-    } else {
-        // Verifica se a carta foi invertida (rotação de 180 graus)
-        const invertida = inverter === 180;
-        document.getElementById("resultado").innerHTML =
-            `Carta: ${nomesCartas[entrada]} <br> Descrição: ${invertida ? descricoesInvertidas[entrada] : descricoesCartas[entrada]}`;
-        document.getElementById("imagem").src = diretorio[entrada];
-        document.getElementById("divImagem").style.display = "block";
+        return;
     }
-}
 
-let inverter = 0; // Variável global para rotação
+    const invertida = inverter === 180;
 
-// Função que seleciona uma carta aleatória
-function randomCard() {
-    const randomNumber = Math.floor(Math.random() * 22); // Gera um número aleatório entre 0 e 21
-    const invertida = Math.random() < 0.5; // 50% de chance de inverter a carta
-    document.getElementById("resultado2").innerHTML = `Carta: ${nomesCartas[randomNumber]} <br> Descrição: ${invertida ? descricoesInvertidas[randomNumber] : descricoesCartas[randomNumber]}`;
-    document.getElementById("imagem2").src = diretorio[randomNumber];
-    document.getElementById("divImagem2").style.display = "block";
+    document.getElementById("resultado").innerHTML = `
+    Carta: ${nomesCartas[entrada]}<br>
+    Descrição: ${invertida ? descricoesInvertidas[entrada] : descricoesCartas[entrada]}`;
 
-    // Define a rotação (180 graus para invertida)
-    inverter = invertida ? 180 : 0;
-    const imagem = document.getElementById("imagem2");
+    const imagem = document.getElementById("imagem");
+    imagem.src = diretorio[entrada];
     imagem.style.transform = `rotate(${inverter}deg) scale(1)`;
+    document.getElementById("divImagem").style.display = "block";
 }
 
-// Função para aumentar ou reduzir a escala da imagem
+/**
+ * Gera uma carta aleatória e exibe o resultado.
+ */
+function randomCard() {
+    const randomNumber = Math.floor(Math.random() * 22);
+    const invertida = Math.random() < 0.5;
+
+    inverter = invertida ? 180 : 0;
+
+    document.getElementById("resultado2").innerHTML = `
+    Carta: ${nomesCartas[randomNumber]}<br>
+    Descrição: ${invertida ? descricoesInvertidas[randomNumber] : descricoesCartas[randomNumber]}`;
+
+    const imagem = document.getElementById("imagem2");
+    imagem.src = diretorio[randomNumber];
+    imagem.style.transform = `rotate(${inverter}deg) scale(1)`;
+    document.getElementById("divImagem2").style.display = "block";
+}
+
+/**
+ * Alterna o zoom da imagem principal.
+ */
 function escala() {
     const imagem = document.getElementById("imagem");
-    const currentTransform = imagem.style.transform;
-
-    if (currentTransform.includes("scale(1.5)")) {
-        imagem.style.transform = `rotate(${inverter}deg) scale(1)`; // Volta ao tamanho normal
-    } else {
-        imagem.style.transform = `rotate(${inverter}deg) scale(1.5)`; // Aumenta a imagem
-    }
+    const scaled = imagem.style.transform.includes("scale(1.5)");
+    imagem.style.transform = `rotate(${inverter}deg) scale(${scaled ? 1 : 1.5})`;
 }
 
-// Função para aumentar ou reduzir a escala da segunda imagem
+/**
+ * Alterna o zoom da imagem aleatória.
+ */
 function escala2() {
     const imagem = document.getElementById("imagem2");
-    const currentTransform = imagem.style.transform;
-
-    if (currentTransform.includes("scale(1.5)")) {
-        imagem.style.transform = `rotate(${inverter}deg) scale(1)`; // Volta ao tamanho normal
-    } else {
-        imagem.style.transform = `rotate(${inverter}deg) scale(1.5)`; // Aumenta a imagem
-    }
+    const scaled = imagem.style.transform.includes("scale(1.5)");
+    imagem.style.transform = `rotate(${inverter}deg) scale(${scaled ? 1 : 1.5})`;
 }
 
+// ===================
+// EVENTOS
+// ===================
 
-document.querySelector("#carta").addEventListener("submit", function (e) {
+// Evento de envio do formulário para acionar a função carta()
+document.getElementById("formTarot").addEventListener("submit", function (e) {
     e.preventDefault();
-
-});
-
-document.querySelector("#formTarot").addEventListener("submit", function (e) {
-    e.preventDefault();
-    carta(); // chama a função que mostra a carta com base no número digitado
+    carta();
 });
